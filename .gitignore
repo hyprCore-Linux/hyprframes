@@ -1,0 +1,38 @@
+# Hyprland plugin build (C++)
+*.so
+*.o
+*.a
+build/
+cmake-build-*/
+CMakeCache.txt
+CMakeFiles/
+CMakeScripts/
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CMakeUserPresets.json
+CTestTestfile.cmake
+_deps/
+log.txt
+
+# Meson / Ninja
+.cache/
+meson-private/
+meson-logs/
+.ninja_deps
+.ninja_log
+
+# Vendored at configure time by fetch-third-party.sh (hyprutils 0.13 headers)
+/third_party/
+
+# Python helpers in borders/
+__pycache__/
+*.py[cod]
+.venv/
+
+# Editor / OS
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store
