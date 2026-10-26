@@ -117,7 +117,7 @@ APICALL EXPORT PLUGIN_DESCRIPTION_INFO PLUGIN_INIT(HANDLE handle) {
   hyprframesAttachExisting();
 
   return {"hyprframes", "Add image borders to windows.",
-          "zacoons / Neuronix 0.55.2", VERSION};
+          "zacoons", VERSION};
 }
 
 APICALL EXPORT void PLUGIN_EXIT() {
