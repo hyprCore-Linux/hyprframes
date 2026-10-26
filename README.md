@@ -174,3 +174,7 @@ cmake --build build -j"$(nproc)"
 ```
 
 Load with `plugin = /path/to/libhyprframes.so` in `hyprland.conf` **before** hyprbars (or other titlebar plugins). Prefer a new session over `hyprctl plugin load` / `hyprctl reload` after hyprbars is already up.
+
+## License
+
+GNU General Public License v3.0. See [LICENSE](LICENSE).
