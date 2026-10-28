@@ -161,17 +161,11 @@ cd borders && python3 generate.py   # heavy/thick 13-patch PNGs + .conf
 `third_party/` is **not** in git. Configure/build downloads [hyprutils v0.13.0](https://github.com/hyprwm/hyprutils/releases/tag/v0.13.0) headers there (needed so builds still work when the system has libhyprutils ≥ 0.14).
 
 ```bash
-./fetch-third-party.sh   # optional; also run automatically by cmake / debug.sh
-./debug.sh               # cmake + build → build/libhyprframes.so
-./enable-next-login.sh   # then a new Hyprland session — not hyprctl plugin load
+./build.sh               # cmake, install libhyprframes.so, arm the next Hyprland login
+./build.sh --disable     # remove the plugin if that login fails
 ```
 
-Or without the helper scripts:
-
-```bash
-cmake -S . -B build      # runs fetch-third-party.sh if headers are missing
-cmake --build build -j"$(nproc)"
-```
+CMake runs `fetch-third-party.sh` when the hyprutils 0.13 headers are missing.
 
 Load with `plugin = /path/to/libhyprframes.so` in `hyprland.conf` **before** hyprbars (or other titlebar plugins). Prefer a new session over `hyprctl plugin load` / `hyprctl reload` after hyprbars is already up.
 
